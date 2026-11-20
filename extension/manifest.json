@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "mini X URL Extension",
+    "version": "1.0.0",
+    "description": "mini Xに投稿されたURLをハイパーリンクに変換したうえで、可能であればそのURLのタイトルを取得して表示する拡張機能です。",
+    "content_scripts": [
+        {
+            "css": [
+                "css/styles.css"
+            ],
+            "js": [
+                "scripts/content.js"
+            ],
+            "matches": [
+                "http://localhost:8000/*"
+            ]
+        }
+    ],
+    "background": {
+        "service_worker": "scripts/background.js"
+    },
+    "host_permissions": [
+        "<all_urls>"
+    ]
+}
